@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brand-rating-analysis"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = ["tabulate>=0.9,<1"]
+
+[project.scripts]
+brand-reports = "scr.cli:run"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["scr*"]
+exclude = ["tests*", "data*", "docs*", "examples*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E","F","W","I","B","UP","SIM","C4","N"]
+exclude = [".venv",".venv1","venv","build","dist","htmlcov",".pytest_cache",".mypy_cache",".ruff_cache"]
+

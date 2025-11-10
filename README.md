@@ -69,7 +69,7 @@ from scr.reports import register_report
 register_report("имя-для-cli", my_report)
 ```
 Необязательные метаданные (заголовки таблицы)
-В отчёте можно задать шапку таблицы (CLI её прочитает, если у тебя стоит headers = getattr(report_fn, "HEADERS", ...)):
+В отчёте можно задать шапку таблицы:
 ```python
 my_report.HEADERS = ["brand", "median rating", "count"]
 
